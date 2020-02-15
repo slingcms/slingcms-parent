@@ -1,0 +1,21 @@
+#
+#
+[feature name=sling-rewriter]
+
+[artifacts]
+    org.apache.sling/org.apache.sling.commons.html/1.1.0
+    org.apache.sling/org.apache.sling.rewriter/1.2.2
+
+[:repoinit]
+    create service user sling-rewriter
+
+    set ACL for sling-rewriter
+        allow   jcr:read    on /
+    end
+
+
+[configurations]
+    org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended-sling.rewriter
+        user.mapping=[
+            "org.apache.sling.rewriter\=sling-rewriter"
+        ]

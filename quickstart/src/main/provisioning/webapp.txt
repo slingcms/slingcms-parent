@@ -1,0 +1,8 @@
+#
+# The :standalone feature contains artifacts for the standalone jar
+#
+[feature name=webapp]
+
+# Add the felix servlet bridge for the webapp case
+[artifacts runModes=:webapp]
+    org.apache.felix/org.apache.felix.http.bridge/4.0.10
