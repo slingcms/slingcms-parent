@@ -1,0 +1,54 @@
+#
+# This deploys project content
+[feature name=slingcms-content]
+
+[artifacts]
+    io.slingcms/io.slingcms.content/${cms.version}
+
+[artifacts startLevel=15]
+    org.apache.cocoon/cocoon-serializers-charsets/1.0.2
+    org.jsoup/jsoup/1.12.1
+    com.vladsch.flexmark/flexmark-osgi/0.50.44
+    org.apache.sling/org.apache.sling.fileoptim/0.9.4
+    org.apache.sling/org.apache.sling.resourcemerger/1.3.10
+    org.apache.servicemix.bundles/org.apache.servicemix.bundles.xmlbeans/3.0.2_1
+    org.apache.commons/commons-math3/3.6.1
+    org.apache.commons/commons-compress/1.19
+    org.apache.commons/commons-email/1.5
+
+[artifacts startLevel=20]
+    org.apache.servicemix.bundles/org.apache.servicemix.bundles.poi/4.1.1_1
+    org.apache.tika/tika-bundle/1.22
+
+[:repoinit]
+
+    # CMS root paths
+    create path (sling:OrderedFolder) /content
+    set ACL for everyone
+        allow   jcr:read    on /content
+    end
+
+    # Service users
+    create service user sling-rewriter
+    set ACL for sling-rewriter
+        allow   jcr:read    on /
+    end
+
+[configurations]
+
+
+  org.apache.sling.serviceusermapping.impl.ServiceUserMapperImpl.amended-sling.rewriter
+     user.mapping=[
+        "org.apache.sling.rewriter\=sling-rewriter"
+    ]
+
+  org.apache.sling.servlets.get.DefaultGetServlet
+    index.files=["index","index.html"]
+    aliases=[""]
+    enable.html=B"false"
+    json.maximumresults=I"200"
+    enable.txt=B"false"
+    enable.xml=B"false"
+    index=B"false"
+    enable.json=B"true"
+    ecmaSuport=B"true"
