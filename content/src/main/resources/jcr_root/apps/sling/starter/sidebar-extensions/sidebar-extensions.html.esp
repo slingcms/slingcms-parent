@@ -1,0 +1,7 @@
+
+<%
+it = resource.getResourceResolver().listChildren(resource);
+while(it.hasNext()) {
+  sling.include(it.next());
+}
+%>

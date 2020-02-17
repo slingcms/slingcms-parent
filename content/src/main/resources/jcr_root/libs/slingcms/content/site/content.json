@@ -1,0 +1,9 @@
+{
+  "starter" : {
+    "sling:resourceType": "sling/starter/home",
+    "jcr:resourceType": "sling:Folder",
+    "sidebar-extensions" : {
+      "sling:resourceType": "sling/starter/sidebar-extensions"
+    }
+  }
+}

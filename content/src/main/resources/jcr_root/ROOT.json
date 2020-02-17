@@ -1,0 +1,17 @@
+{
+    "jcr:mixinTypes": [ "sling:Redirect" ],
+    "sling:resourceType": "sling:redirect",
+    "sling:target": "/starter.html",
+    "content" : {
+        "jcr:mixinTypes": [ "sling:Redirect" ],
+        "sling:resourceType": "sling:redirect",
+        "sling:target": "/starter.html",
+        "starter" : {
+            "sling:resourceType": "sling/starter/home",
+            "jcr:resourceType": "sling:Folder",
+            "sidebar-extensions" : {
+                "sling:resourceType": "sling/starter/sidebar-extensions"
+            }
+        }
+    }
+}
