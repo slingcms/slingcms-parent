@@ -14,8 +14,6 @@ maven-eclipse.xml
 .vlt
 .DS_Store
 jcr.log
-atlassian-ide-plugin.xml
-sling
 
 .vlt-sync-config.properties
 .vlt-sync.log
