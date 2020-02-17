@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+echo "***********************************"
+echo "PACKAGING"
+echo "***********************************"
+
 mvn clean package
 
-cd quickstart && java -jar $(find ./target -name io.slingcms*[^sources].jar) -Dorg.osgi.service.http.port=8081 && cd -
+echo "***********************************"
+echo "STARTING CLEAN INSTANCE"
+echo "***********************************"
+
+cd quickstart/target && java -jar $(find . -name io.slingcms*[^sources].jar) -Dorg.osgi.service.http.port=8081 && cd -
