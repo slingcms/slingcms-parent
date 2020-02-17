@@ -40,7 +40,6 @@
                         <fileset>
                             <directory>${basedir}</directory>
                             <includes>
-                                <include>sling/**</include>
                                 <include>coverage.ec</include>
                                 <include>derby.log</include>
                                 <include>jackrabbit/**</include>
@@ -64,15 +63,11 @@
                     </execution>
                 </executions>                
                 <configuration>
-                    <verbose>true</verbose>
                     <createWebapp>false</createWebapp>
                     <servers>
                         <server>
                             <port>${http.port}</port>
                             <controlPort>${sling.control.port}</controlPort>
-                            <runmode>${runmodes}</runmode>
-                            <folder>${folder}</folder>
-                            <debug>${debug}</debug>
                         </server>
                     </servers>
                     <usePomVariables>true</usePomVariables>
@@ -122,14 +117,11 @@
         <pluginManagement>
             <plugins>
                 <plugin>
-                    <!-- Extend RAT configuration from parent pom -->
+                    <!-- Ignore Rat config inherited from Sling -->
                     <groupId>org.apache.rat</groupId>
                     <artifactId>apache-rat-plugin</artifactId>
                     <configuration>
-                        <excludes combine.children="append">
-                            <!-- Exclude sling instance -->
-                            <exclude>sling/**</exclude>
-                        </excludes>
+                        <skip>true</skip>
                     </configuration>
                 </plugin>
             </plugins>
