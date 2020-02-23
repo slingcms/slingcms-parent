@@ -16,7 +16,6 @@ gulp.task('starter-styles', () => gulp.src(srcDir('scss/*.scss'))
     .pipe(sass().on('error', sass.logError))
     .pipe(cleanCSS())
     .pipe(concatCss('bundle.css'))
-    .pipe(header(apache2License))
     .pipe(gulp.dest(distDir('jcr_root/content/starter/css'))));
 
 gulp.task('starter-assets', () => gulp.src(srcDir('img/*'))
