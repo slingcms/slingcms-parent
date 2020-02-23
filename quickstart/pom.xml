@@ -17,7 +17,8 @@
     <properties>
         <sling.java.version>8</sling.java.version>
         <IT.expected.bundles.count>126</IT.expected.bundles.count>
-        <cms.version>${project.parent.version}</cms.version>
+        <project.version>${project.parent.version}</project.version>
+        <cms.version>0.14.0</cms.version>
     </properties>
 
     <build>
@@ -61,7 +62,7 @@
                             <goal>stop</goal>
                         </goals>
                     </execution>
-                </executions>                
+                </executions>
                 <configuration>
                     <createWebapp>false</createWebapp>
                     <servers>
@@ -111,7 +112,7 @@
                         <IT.expected.bundles.count>${IT.expected.bundles.count}</IT.expected.bundles.count>
                     </systemPropertyVariables>
                 </configuration>
-            </plugin>            
+            </plugin>
         </plugins>
 
         <pluginManagement>
@@ -128,7 +129,7 @@
         </pluginManagement>
 
     </build>
-    
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
