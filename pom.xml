@@ -33,7 +33,8 @@
     </properties>
 
     <modules>
-        <module>content</module>
+<!--        <module>content</module>-->
+        <module>content-drawio</module>
         <module>quickstart</module>
     </modules>
 
