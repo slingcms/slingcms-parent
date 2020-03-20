@@ -8,9 +8,9 @@
         <version>0.1</version>
     </parent>
 
-    <artifactId>io.slingcms.content.drawio</artifactId>
-    <name>SlingCMS - Draw.io Portal</name>
-    <description>Provides initial content for repository</description>
+    <artifactId>io.slingcms.content.rocket</artifactId>
+    <name>SlingCMS - Rocket UI ?</name>
+    <description>Rocket a CMS UI that will take you anywhere you want!</description>
 
 
     <properties>
@@ -135,7 +135,7 @@
                         </goals>
                         <configuration>
                             <bnd><![CDATA[
-Bundle-SymbolicName: io.slingcms.content.drawio
+Bundle-SymbolicName: io.slingcms.content.rocket
 Bundle-Category: io.slingcms
 Bundle-Description: ${project.description}
 Bundle-DocURL: https://slingcms.io
@@ -254,4 +254,12 @@ Sling-Initial-Content: jcr_root
         </plugins>
 
     </build>
+    <dependencies>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.annotation.versioning</artifactId>
+            <version>1.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 </project>
