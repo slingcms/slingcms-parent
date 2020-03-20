@@ -6,7 +6,8 @@
     org.apache.sling/org.apache.sling.cms.ui/${cms.version}
     com.github.livesense/org.liveSense.fragment.sun.misc/1.0.5
     #io.slingcms/io.slingcms.content/${project.version}
-    io.slingcms/io.slingcms.content.drawio/${project.version}
+    io.slingcms/io.slingcms.content.diagrams/${project.version}
+    io.slingcms/io.slingcms.core.diagrams/${project.version}
 
 [artifacts startLevel=15]
     org.apache.cocoon/cocoon-serializers-charsets/1.0.2
