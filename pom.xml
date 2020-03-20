@@ -34,8 +34,10 @@
 
     <modules>
 <!--        <module>content</module>-->
-        <module>content-drawio</module>
+        <module>content-diagrams</module>
+        <module>content-rocket</module>
         <module>quickstart</module>
+        <module>core-diagrams</module>
     </modules>
 
     <scm>
@@ -322,12 +324,16 @@
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>animal-sniffer-maven-plugin</artifactId>
+                    <version>1.16</version>
                     <configuration>
                         <signature>
                             <groupId>org.codehaus.mojo.signature</groupId>
                             <artifactId>java1${sling.cms.java.version}</artifactId>
                             <version>1.0</version>
                         </signature>
+                        <ignores>
+                            <ignore>org.apache.batik.*</ignore>
+                        </ignores>
                     </configuration>
                 </plugin>
             </plugins>
