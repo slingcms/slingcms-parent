@@ -66,11 +66,13 @@ public class LogServlet extends SlingAllMethodsServlet {
 		warningFilters = new HashSet<String>(Arrays.asList(warningArray));
 	}
 
+    @Override
 	public void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response)
 	{
 		doPost(request, response);
 	}
 
+    @Override
 	public void doPost(SlingHttpServletRequest request, SlingHttpServletResponse response)
 	{
 		try
