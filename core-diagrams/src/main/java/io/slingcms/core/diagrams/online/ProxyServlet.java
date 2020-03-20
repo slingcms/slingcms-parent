@@ -12,8 +12,6 @@ import org.apache.sling.api.servlets.SlingAllMethodsServlet;
 import org.osgi.service.component.annotations.Component;
 
 import javax.servlet.Servlet;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -25,12 +23,15 @@ import java.util.logging.Logger;
 /**
  * Servlet implementation ProxyServlet
  */
-@Component(service = Servlet.class, property = { "sling.servlet.paths=/bin/diagrams/proxy",
-        "sling.servlet.methods=" + HttpConstants.METHOD_GET })
+@Component(service = Servlet.class, property = { "sling.servlet.paths=/bin/diagrams/doproxy",
+        "sling.servlet.methods=" + HttpConstants.METHOD_POST, "sling.servlet.methods=" + HttpConstants.METHOD_GET })
 @SuppressWarnings("serial")
 public class ProxyServlet extends SlingAllMethodsServlet
 {
-	private static final Logger log = Logger.getLogger(LogServlet.class
+
+    private static final long serialVersionUID = 6134007100684499058L;
+
+	private static final Logger log = Logger.getLogger(ProxyServlet.class
             .getName());
 
 	/**
@@ -49,15 +50,8 @@ public class ProxyServlet extends SlingAllMethodsServlet
 	 */
 	private static byte[] emptyBytes = new byte[0];
 
-	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public ProxyServlet()
-	{
-		super();
-	}
-
-	protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServletException, IOException
+    @Override
+	protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response)
 	{
 		String urlParam = request.getParameter("url");
 
