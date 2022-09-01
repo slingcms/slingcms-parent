@@ -245,7 +245,7 @@
             <!-- Document Processing Dependencies -->
             <dependency>
                 <artifactId>jsoup</artifactId>
-                <version>1.11.3</version>
+                <version>1.15.3</version>
                 <groupId>org.jsoup</groupId>
                 <scope>provided</scope>
             </dependency>
